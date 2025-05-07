@@ -29,16 +29,19 @@ export default function Hero() {
         <p className="w-[30%] text-xl my-3">
           A front-end engineer passionate about building fast, accessible, and
           user-centered web experiences. With hands-on experience in{" "}
-          <span className="inline-flex items-center gap-1 font-bold">
-            React <FaReact className="text-[#61DAFB]" />
+          <span className="inline-flex items-center gap-1 font-semibold text-2xl">
+            React{" "}
+            <FaReact className="text-[#61DAFB] animate-spin animate-infinite animate-ease-out animate-normal" />
           </span>
           ,{" "}
-          <span className="inline-flex items-center gap-1 font-bold">
-            Next.js <RiNextjsFill />
+          <span className="inline-flex items-center gap-1 font-semibold text-2xl">
+            Next.js{" "}
+            <RiNextjsFill className="animate-rotate-y animate-infinite animate-ease-out animate-normal" />
           </span>
           , and{" "}
-          <span className="inline-flex items-center gap-1 font-bold">
-            Tailwind <RiTailwindCssFill className="text-[#38B2AC]" />
+          <span className="inline-flex items-center gap-1 font-semibold text-2xl">
+            Tailwind{" "}
+            <RiTailwindCssFill className="text-[#38B2AC] animate-rotate-y animate-infinite animate-ease-out animate-normal" />
           </span>
           , I’ve shipped scalable solutions for startups, student organizations,
           and tech communities. Whether it's automating event platforms,
