@@ -211,7 +211,7 @@ export default function Cards() {
                     <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-grow">
                       <div className="border-b border-gray-200 pb-2 mb-3">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h2 className="text-xl font-bold text-gray-800">
+                          <h2 className="text-xl font-bold text-gray-800 select-none">
                             {card.title}
                           </h2>
                           <span
@@ -222,12 +222,12 @@ export default function Cards() {
                         </div>
                       </div>
 
-                      <p className="text-gray-600 mb-2 text-lg">
+                      <p className="text-gray-600 mb-2 text-lg select-none">
                         {card.description}
                       </p>
 
                       {card.contributions?.length > 0 && (
-                        <ul className="list-disc list-inside text-base text-gray-700 mb-4 space-y-1">
+                        <ul className="list-disc list-inside text-base text-gray-700 mb-4 space-y-1 select-none">
                           {card.contributions.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}
