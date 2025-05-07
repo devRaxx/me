@@ -5,10 +5,10 @@ import { IoArrowDownOutline } from "react-icons/io5";
 
 export default function Hero() {
   return (
-    <section>
+    <section className="h-screen">
       <div className="flex flex-col items-center justify-center h-screen text-center mx-auto">
         <div className="relative bg-white border-2 border-black rounded-xl px-6 py-3 mb-4 shadow-md">
-          <h1 className="font-bold text-lg text-black">
+          <h1 className="font-bold text-5xl text-black">
             Hi, I&apos;m Rax!{" "}
             <span className="inline-block animate-wiggle-more animate-infinite">
               👋
@@ -71,7 +71,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="absolute -top-3  inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <div className="absolute -top-6 inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
     </section>
   );
 }
