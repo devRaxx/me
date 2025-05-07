@@ -1,3 +1,5 @@
+@vite (['resources/css/app.css', 'resources/js/app.js'])
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
