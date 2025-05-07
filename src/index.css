@@ -1,28 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
-  --font-alegreya: "Alegreya SC", serif;
+  --font-merriweather: "Merriweather", serif;
 
-  /* Animation Variables */
-  --animate-pan-toss: pan-toss 1.2s ease-in-out infinite;
   --animate-ingredient-left: ingredient-left 1.2s ease-in-out infinite;
   --animate-ingredient-right: ingredient-right 1.2s ease-in-out infinite;
-
-  @keyframes pan-toss {
-    0%,
-    100% {
-      transform: rotate(0deg) translateY(0);
-    }
-    30% {
-      transform: rotate(-20deg) translateY(-10px);
-    }
-    60% {
-      transform: rotate(15deg) translateY(-5px);
-    }
-  }
+  --animate-ingredient-left2: ingredient-left2 1.2s ease-in-out infinite;
+  --animate-ingredient-right2: ingredient-right2 1.9s ease-in-out infinite;
 
   @keyframes ingredient-left {
     0% {
@@ -30,11 +17,26 @@
       opacity: 1;
     }
     50% {
-      transform: translate(-40px, -40px) scale(1.2);
+      transform: translate(-30px, -30px) scale(1.2);
       opacity: 1;
     }
     100% {
-      transform: translate(-80px, 0) scale(1);
+      transform: translate(-60px, 0) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ingredient-left2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-20px, -20px) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-40px, 0) scale(1);
       opacity: 0;
     }
   }
@@ -45,18 +47,48 @@
       opacity: 1;
     }
     50% {
-      transform: translate(40px, -40px) scale(1.2);
+      transform: translate(30px, -30px) scale(1.2);
       opacity: 1;
     }
     100% {
-      transform: translate(80px, 0) scale(1);
+      transform: translate(60px, 0) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ingredient-right2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(20px, -20px) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(40px, 0) scale(1);
       opacity: 0;
     }
   }
 }
 
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+@keyframes reshuffle {
+  0% {
+    transform: scale(1.05) translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
 :root {
-  font-family: "Montserrat", "Alegreya SC", system-ui, Avenir, Helvetica, Arial,
+  font-family: "Montserrat", "Merriweather", system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
