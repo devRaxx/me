@@ -76,17 +76,6 @@
   animation: fade-in-up 0.5s ease-out;
 }
 
-@keyframes reshuffle {
-  0% {
-    transform: scale(1.05) translateY(-10px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-}
-
 :root {
   font-family: "Montserrat", "Merriweather", system-ui, Avenir, Helvetica, Arial,
     sans-serif;

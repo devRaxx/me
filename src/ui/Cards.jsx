@@ -5,7 +5,6 @@ import Image2 from "../assets/images/promisePH.png";
 import Image3 from "../assets/images/techtix.png";
 import Image4 from "../assets/images/flms.png";
 
-// Role badge color options
 const roleColors = [
   "bg-red-100 text-red-800",
   "bg-green-100 text-green-800",
@@ -255,7 +254,7 @@ export default function Cards() {
       <div className="flex justify-center items-center">
         <button
           onClick={resetCards}
-          className="flex font-semibold gap-2 items-center bg-blue-800 text-white rounded-lg hover:bg-blue-600 p-2 transition duration-300"
+          className="flex font-semibold gap-2 items-center bg-white text-black rounded-lg hover:bg-teal-300 p-2 transition duration-300"
         >
           Reshuffle <FaDice />
         </button>
