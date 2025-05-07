@@ -1,6 +1,7 @@
 import { FaReact, FaLinkedin } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import raxIcon from "../assets/images/rax-icon.png";
+import { IoArrowDownOutline } from "react-icons/io5";
 
 export default function Hero() {
   return (
@@ -25,7 +26,7 @@ export default function Hero() {
           <span className="absolute bottom-3 right-7 border-6 border-[#0d1321] w-8 h-8 bg-green-500 rounded-full"></span>
         </div>
 
-        <p className="w-[50%] text-xl my-3">
+        <p className="w-[30%] text-xl my-3">
           A front-end engineer passionate about building fast, accessible, and
           user-centered web experiences. With hands-on experience in{" "}
           <span className="inline-flex items-center gap-1 font-bold">
@@ -44,17 +45,30 @@ export default function Hero() {
           redesigning high-traffic pages, or creating interactive UI for civic
           tech, I bring clean code and thoughtful design to every project.
         </p>
-        <button className="mt-4 px-4 py-2 bg-black text-white rounded-lg hover:bg-[#3e5c76] transition duration-300">
-          <a
-            href="https://www.linkedin.com/in/rockyapcastaneros/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 font-extrabold"
-          >
-            Network with me <FaLinkedin className="text-[#0077B5]" />
-          </a>
-        </button>
+        <div className="flex gap-10">
+          <button className="mt-4 px-4 py-2 bg-[#0d1321] text-white rounded-lg border-2 border-white hover:bg-indigo-500 transition duration-300">
+            <a
+              href="https://www.linkedin.com/in/rockyapcastaneros/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-bold text-xl"
+            >
+              Projects <IoArrowDownOutline />
+            </a>
+          </button>
+          <button className="mt-4 px-4 py-2 bg-white text-black border-2 rounded-lg hover:bg-teal-300 hover:border-white transition duration-300">
+            <a
+              href="https://www.linkedin.com/in/rockyapcastaneros/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-bold text-xl"
+            >
+              Connect <FaLinkedin className="text-[#0077B5]" />
+            </a>
+          </button>
+        </div>
       </div>
+      <div className="absolute -top-3  inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
     </section>
   );
 }
