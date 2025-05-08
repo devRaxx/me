@@ -1,1 +1,1 @@
-My Portfolio Website, finally lol
+My portfolio website, finally lol
