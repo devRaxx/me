@@ -72,6 +72,12 @@
   }
 }
 
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#ff0f7b] to-[#f89b29] bg-clip-text text-transparent;
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out;
 }
