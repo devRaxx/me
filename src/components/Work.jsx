@@ -31,6 +31,7 @@ const Work = () => (
             points={exp.points}
             image={exp.image}
             aos={index % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+            link={exp.link}
           />
         ))}
       </Timeline>
