@@ -1,19 +1,26 @@
-import {
-  Timeline,
-  TimelineItem,
-  TimelineConnector,
-  TimelineHeader,
-  TimelineIcon,
-  TimelineBody,
-  Typography,
-} from "@material-tailwind/react";
+// Work.js
+import React from "react";
+import Timeline from "@mui/lab/Timeline";
+import ExperienceItem from "../ui/ExperienceItem";
+import experiences from "../data/experiences";
 
-export default function Work() {
-  return (
-    <section className="h-screen">
-      <div className="flex flex-col items-center justify-center text-center w-[60rem] mx-auto mt-14">
-        WORK SECTION
-      </div>
-    </section>
-  );
-}
+const Work = () => (
+  <section className="h-full flex flex-col items-center justify-center">
+    <h1 className="text-2xl font-bold mb-8">WORK EXPERIENCES</h1>
+    <div className="w-full max-w-5xl">
+      <Timeline position="alternate">
+        {experiences.map((exp, index) => (
+          <ExperienceItem
+            key={index}
+            date={exp.date}
+            title={exp.title}
+            company={exp.company}
+            points={exp.points}
+          />
+        ))}
+      </Timeline>
+    </div>
+  </section>
+);
+
+export default Work;
