@@ -16,6 +16,7 @@ const Work = () => (
             title={exp.title}
             company={exp.company}
             points={exp.points}
+            image={exp.image}
           />
         ))}
       </Timeline>

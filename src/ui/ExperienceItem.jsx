@@ -7,27 +7,42 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 
-const ExperienceItem = ({ date, title, company, points }) => (
+const ExperienceItem = ({ date, title, company, points, image }) => (
   <TimelineItem>
     <TimelineOppositeContent className="text-gray-400">
       <Typography fontFamily={"monospace"}>{date}</Typography>
+      {image && (
+        <div className="relative group w-fit">
+          <img src={image} alt={`${company} logo`} />
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center opacity-0 transition-[opacity] duration-0 group-hover:opacity-100 group-hover:duration-500"
+          >
+            <button className="bg-white text-gray-800 font-bold px-4 py-2 rounded-lg shadow hover:bg-amber-300 transition duration-300 flex items-center gap-2">
+              View
+            </button>
+          </a>
+        </div>
+      )}
     </TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot />
       <TimelineConnector />
     </TimelineSeparator>
     <TimelineContent>
-      <Typography variant="h6" fontFamily={"monospace"}>
+      <Typography variant="h4" fontFamily={"monospace"}>
         {title}
       </Typography>
-      <Typography variant="subtitle1" fontFamily={"cursive"}>
+      <Typography variant="h6" fontFamily={"cursive"}>
         {company}
       </Typography>
       <ul className="list-disc list-inside mt-2 space-y-1">
         {points.map((point, index) => (
           <Typography
             key={index}
-            variant="body2"
+            variant="body1"
             fontFamily={"monospace"}
             align="inherit"
             component="li"
