@@ -17,9 +17,7 @@ const ExperienceItem = ({ date, title, company, points, image, aos, link }) => (
   (
     <TimelineItem data-aos={aos}>
       <TimelineOppositeContent className="text-gray-400">
-        <Typography fontFamily={"monospace"} fontSize={"1.3rem"}>
-          {date}
-        </Typography>
+        <Typography fontSize={"1.3rem"}>{date}</Typography>
         {image && (
           <div className="relative group w-fit">
             <img
@@ -48,19 +46,13 @@ const ExperienceItem = ({ date, title, company, points, image, aos, link }) => (
       <TimelineContent>
         <Typography
           variant="h4"
-          fontFamily={"monospace"}
           fontSize={"2.5rem"}
           fontWeight={700}
           className="text-yellow-500"
         >
           {title}
         </Typography>
-        <Typography
-          variant="h6"
-          fontFamily={"cursive"}
-          fontSize={"1.7rem"}
-          fontWeight={500}
-        >
+        <Typography variant="h6" fontSize={"1.7rem"} fontWeight={500}>
           {company}
         </Typography>
         <ul className="list-disc list-inside mt-2 space-y-1">
@@ -68,7 +60,6 @@ const ExperienceItem = ({ date, title, company, points, image, aos, link }) => (
             <Typography
               key={index}
               variant="body1"
-              fontFamily={"monospace"}
               fontSize={"1.1rem"}
               fontWeight={500}
               align="inherit"

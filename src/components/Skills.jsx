@@ -74,7 +74,7 @@ export default function Skills() {
             <div
               className="grid grid-cols-2 sm:grid-cols-4 bg-purple-600 p-5 rounded-2xl"
               data-aos="flip-up"
-              data-aos-delay="1000"
+              data-aos-delay="500"
             >
               {tools.map((tool, index) => (
                 <div
