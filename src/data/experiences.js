@@ -5,30 +5,7 @@ import Image4 from "../assets/images/mugna.png";
 
 const experiences = [
   {
-    date: "April 2021 - Present",
-    title: "Front-end Engineer",
-    company: "SPARCS UP Mindanao",
-    image: Image1,
-    points: [
-      "Engineered and maintained front-end projects using Astro and Vercel, achieving 98% uptime and reducing build and deployment time by 35%.",
-      "Redesigned Events section for the homepage, increasing mobile responsiveness score to 100% and enhancing accessibility for over 200+ monthly users.",
-      "Contributed to 5+ site-wide updates that improved navigation and performance, resulting in a 2x increase in returning visitors.",
-    ],
-    link: "https://www.sparcsup.com",
-  },
-  {
-    date: "June 2023 - May 2024",
-    title: "Marketing and Communications Intern",
-    company: "Upgrade Innolab",
-    image: Image2,
-    points: [
-      "Supported startup validation and capacity building programs for over 25 early-stage ventures, contributing to a 30% improvement in pitch readiness and investor matching.",
-      "Led 10+ strategic campaigns that increased community reach by 75% and engagement rate by 55% across social and partner platforms.",
-    ],
-    link: "https://upgradeinnolab.com",
-  },
-  {
-    date: "March 2024 - Present",
+    date: "March 2024 - June 2025",
     title: "Full-stack Engineer",
     company: "UP Mindanao College of Science and Mathematics",
     image: Image3,
@@ -40,6 +17,18 @@ const experiences = [
     link: "https://www.upmin.edu.ph",
   },
   {
+    date: "April 2021 - June 2025",
+    title: "Front-end Engineer",
+    company: "SPARCS UP Mindanao",
+    image: Image1,
+    points: [
+      "Engineered and maintained front-end projects using Astro and Vercel, achieving 98% uptime and reducing build and deployment time by 35%.",
+      "Redesigned Events section for the homepage, increasing mobile responsiveness score to 100% and enhancing accessibility for over 200+ monthly users.",
+      "Contributed to 5+ site-wide updates that improved navigation and performance, resulting in a 2x increase in returning visitors.",
+    ],
+    link: "https://www.sparcsup.com",
+  },
+  {
     date: "June 2024 - Aug 2024",
     title: "Front-end Engineer Intern",
     company: "MUGNA Tech",
@@ -49,6 +38,17 @@ const experiences = [
       "Owned and redesigned the Mugna Services Page, implementing SEO strategies that boosted page visibility by 60% and improved responsiveness that decreased bounce rates by 30%.",
     ],
     link: "https://www.mugna.tech",
+  },
+  {
+    date: "June 2023 - May 2024",
+    title: "Marketing and Communications Intern",
+    company: "Upgrade Innolab",
+    image: Image2,
+    points: [
+      "Supported startup validation and capacity building programs for over 25 early-stage ventures, contributing to a 30% improvement in pitch readiness and investor matching.",
+      "Led 10+ strategic campaigns that increased community reach by 75% and engagement rate by 55% across social and partner platforms.",
+    ],
+    link: "https://upgradeinnolab.com",
   },
 ];
 
