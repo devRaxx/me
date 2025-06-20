@@ -25,9 +25,9 @@ const projectData = [
     role: "Frontend Engineer",
     link: "https://www.durianpy.org",
     contributions: [
-      "Implemented the landing page...",
-      "Integrated CMS...",
-      "Ensured responsive design...",
+      "Formulated interactive homepage elements using GSAP, producing an 80% increase in user engagement.",
+      "Implemented smooth scroll animations and delayed reveals, which resulted in a 30% longer average time-on-page for visitors.",
+      "Spearheaded a community-driven initiative to audit Python documentation for accessibility gaps, leading to the identification of findings to fix the three biggest causes of accessibility barriers within 5 days.",
     ],
   },
   {
@@ -37,9 +37,9 @@ const projectData = [
     role: "Lead Frontend Dev",
     link: "https://promise-ph.web.app",
     contributions: [
-      "Built a social forum...",
-      "Designed responsive interfaces...",
-      "Implemented secure authentication...",
+      "Built a social forum platform to track and verify political pledges, enabling user-generated content with real-time updates via Firebase and facilitating 200+ daily interactions.",
+      "Designed fully responsive interfaces using ChakraUI and Tailwind CSS, ensuring a consistent and optimal user experience across 100% of mobile and desktop views.",
+      "Implemented secure authentication and a modular post architecture to handle high user interaction volumes with 99.9% uptime.",
     ],
   },
   {
@@ -49,9 +49,9 @@ const projectData = [
     role: "Frontend Dev",
     link: "https://www.techtix.app/",
     contributions: [
-      "Led front-end development...",
-      "Optimized UI/UX components...",
-      "Integrated serverless backend...",
+      "Led front-end development for UP Mindanao SPARCS' official event platform, streamlining registration for over 500+ participants and automating certificate generation with AWS Lambda with 100% accuracy.",
+      "Optimized UI/UX components by applying accessibility best practices, achieving a 99% Lighthouse accessibility score and reducing average user task time by 40%",
+      "Integrated a serverless backend with FastAPI, resulting in 99.9% system uptime and nearinstantaneous certificate delivery for participants.",
     ],
   },
   {
@@ -61,9 +61,9 @@ const projectData = [
     role: "Fullstack Engineer",
     link: "https://www.techtix.app/",
     contributions: [
-      "Built a FLMS using MERN stack...",
-      "Integrated automated scheduling...",
-      "Spearheaded legacy system migration...",
+      "Built a FLMS using MERN stack.",
+      "Integrated automated scheduling.",
+      "Spearheaded legacy system migration.",
     ],
   },
 ];

@@ -62,7 +62,7 @@ const ExperienceItem = ({ date, title, company, points, image, aos, link }) => (
               variant="body1"
               fontSize={"1.1rem"}
               fontWeight={500}
-              align="inherit"
+              align="justify"
               component="li"
               className="text-gray-300"
             >
