@@ -5,7 +5,7 @@ import { IoArrowDownOutline } from "react-icons/io5";
 
 export default function Hero() {
   return (
-    <section className="h-screen">
+    <section className="h-screen" id="hero">
       <div className="flex flex-col items-center justify-center h-screen text-center mx-auto">
         <div className="relative bg-white border-2 border-black rounded-xl px-6 py-3 mb-4 shadow-md">
           <h1 className="font-bold text-5xl text-black">
@@ -51,8 +51,7 @@ export default function Hero() {
         <div className="flex gap-10">
           <button className="mt-4 px-4 py-2 bg-[#0d1321] text-white rounded-lg border-2 border-white hover:bg-indigo-500 transition duration-300">
             <a
-              href="https://www.linkedin.com/in/rockyapcastaneros/"
-              target="_blank"
+              href="#projects"
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-bold text-xl"
             >
