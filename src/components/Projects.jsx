@@ -3,7 +3,10 @@ import Cards from "../ui/Cards";
 export default function Projects() {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center text-center mx-auto mt-14">
+      <div
+        className="flex flex-col items-center justify-center text-center mx-auto mt-14"
+        id="projects"
+      >
         <div className="flex justify-center items-center animate-shake animate-infinite animate-ease-linear">
           <h1 className="font-merriweather text-xl gradient-text">
             WHAT'S COOKING ?

@@ -5,7 +5,10 @@ import ExperienceItem from "../ui/ExperienceItem";
 import experiences from "../data/experiences";
 
 const Work = () => (
-  <section className="h-full flex flex-col items-center justify-center mt-14">
+  <section
+    className="h-full flex flex-col items-center justify-center mt-14"
+    id="work"
+  >
     <div className="flex items-center">
       <h1 className="font-merriweather text-xl gradient-text animate-bounce animate-infinite animate-ease-out">
         RECIPES FOR GROWTH

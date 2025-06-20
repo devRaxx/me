@@ -5,7 +5,10 @@ import tools from "../data/tools";
 export default function Skills() {
   return (
     <section className="min-h-screen py-10">
-      <div className="flex flex-col items-center justify-center text-center mx-auto">
+      <div
+        className="flex flex-col items-center justify-center text-center mx-auto"
+        id="skills"
+      >
         <div className="flex items-center">
           <h1 className="font-merriweather text-xl gradient-text animate-pulse animate-infinite animate-ease-out">
             KITCHEN ESSENTIALS{" "}
