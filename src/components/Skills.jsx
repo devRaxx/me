@@ -30,7 +30,7 @@ export default function Skills() {
                 Frontend
               </h1>
               <div
-                className="grid grid-cols-2 bg-green-400 p-5 rounded-2xl"
+                className="grid grid-cols-2 bg-green-500 p-5 rounded-2xl"
                 data-aos="flip-left"
               >
                 {frontendSkills.map((skill, index) => (
