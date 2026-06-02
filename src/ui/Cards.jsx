@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { FaLink } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { FaChevronLeft, FaChevronRight, FaLink } from "react-icons/fa";
 import Image1 from "../assets/images/durian-py.png";
 import Image2 from "../assets/images/promisePH.png";
 import Image3 from "../assets/images/techtix.png";
@@ -69,7 +69,7 @@ const projectData = [
 ];
 
 export default function Cards() {
-  const [cards, setCards] = useState(
+  const [cards] = useState(
     projectData.map((card) => ({
       ...card,
       roleColor: getRandomRoleColor(),
@@ -77,31 +77,72 @@ export default function Cards() {
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [startX, setStartX] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const [direction, setDirection] = useState(null);
 
   const cardRef = useRef(null);
+  const animationTimerRef = useRef(null);
+
+  const animationDuration = 280;
+  const slideDistance = 320;
+
+  useEffect(() => {
+    return () => {
+      if (animationTimerRef.current) {
+        window.clearTimeout(animationTimerRef.current);
+      }
+    };
+  }, []);
+
+  const commitNavigation = (step) => {
+    if (isAnimating) return;
+
+    if (animationTimerRef.current) {
+      window.clearTimeout(animationTimerRef.current);
+    }
+
+    const nextDirection = step > 0 ? "left" : "right";
+
+    setIsDragging(false);
+    setIsAnimating(true);
+    setOffsetX(0);
+    setDirection(nextDirection);
+
+    animationTimerRef.current = window.setTimeout(() => {
+      setCurrentIndex((prev) => (prev + step + cards.length) % cards.length);
+      setIsAnimating(false);
+      setDirection(null);
+      animationTimerRef.current = null;
+    }, animationDuration);
+  };
+
+  const handlePrev = () => commitNavigation(-1);
+
+  const handleNext = () => commitNavigation(1);
 
   const handleMouseDown = (e) => {
+    if (isAnimating) return;
     setIsDragging(true);
     setStartX(e.clientX);
   };
 
   const handleTouchStart = (e) => {
+    if (isAnimating) return;
     setIsDragging(true);
     setStartX(e.touches[0].clientX);
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || isAnimating) return;
     const newOffsetX = e.clientX - startX;
     setOffsetX(newOffsetX);
     setDirection(newOffsetX > 50 ? "right" : newOffsetX < -50 ? "left" : null);
   };
 
   const handleTouchMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || isAnimating) return;
     const newOffsetX = e.touches[0].clientX - startX;
     setOffsetX(newOffsetX);
     setDirection(newOffsetX > 50 ? "right" : newOffsetX < -50 ? "left" : null);
@@ -111,7 +152,8 @@ export default function Cards() {
     if (!isDragging) return;
 
     if (Math.abs(offsetX) > 100) {
-      setCurrentIndex((prev) => (prev + 1) % cards.length);
+      commitNavigation(offsetX < 0 ? 1 : -1);
+      return;
     }
 
     setIsDragging(false);
@@ -125,12 +167,34 @@ export default function Cards() {
   );
 
   return (
-    <div className="relative h-[44rem] w-full md:w-[60rem] mx-auto mb-6">
+    <div className="relative h-[44rem] w-full mx-auto mb-6 overflow-visible md:max-w-[72rem] md:px-20">
+      <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 hidden items-center justify-between px-3 md:flex">
+        <button
+          type="button"
+          onClick={handlePrev}
+          disabled={isAnimating}
+          aria-label="Previous project"
+          className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-950/85 text-slate-100 shadow-[0_16px_40px_rgba(2,6,23,0.35)] backdrop-blur transition duration-300 hover:-translate-x-1 hover:border-cyan-400/40 hover:text-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <FaChevronLeft className="text-lg" />
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
+          disabled={isAnimating}
+          aria-label="Next project"
+          className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-950/85 text-slate-100 shadow-[0_16px_40px_rgba(2,6,23,0.35)] backdrop-blur transition duration-300 hover:translate-x-1 hover:border-cyan-400/40 hover:text-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <FaChevronRight className="text-lg" />
+        </button>
+      </div>
       {visibleCards.map((card, i) => {
         const isTopCard = i === 0;
         const zIndex = 10 - i;
         const translateY = i * 4;
         const scale = 1 - i * 0.05;
+        const exitX = direction === "right" ? slideDistance : -slideDistance;
+        const exitRotate = direction === "right" ? 12 : -12;
 
         let cardStyle = {
           transform: `translateY(${translateY}px) scale(${scale})`,
@@ -139,9 +203,9 @@ export default function Cards() {
         };
 
         if (isTopCard && isDragging) {
-          cardStyle.transform = `translateX(${offsetX}px) rotate(${
-            offsetX * 0.1
-          }deg)`;
+          cardStyle.transform = `translateX(${offsetX}px) rotate(${offsetX * 0.1}deg)`;
+        } else if (isTopCard && isAnimating) {
+          cardStyle.transform = `translateX(${exitX}px) rotate(${exitRotate}deg) scale(0.95)`;
         }
 
         let bgColor = "bg-slate-950/90";
@@ -153,7 +217,7 @@ export default function Cards() {
             key={`${currentIndex}-${i}`}
             ref={isTopCard ? cardRef : null}
             style={cardStyle}
-            className={`absolute inset-0 ${bgColor} rounded-lg overflow-hidden border border-slate-800 shadow-[0_24px_80px_rgba(2,6,23,0.65)] transition-all duration-200 ease-out`}
+            className={`absolute inset-0 ${bgColor} rounded-lg overflow-hidden border border-slate-800 shadow-[0_24px_80px_rgba(2,6,23,0.65)] transition-[transform,opacity,background-color,border-color] duration-300 ease-out`}
             onMouseDown={isTopCard ? handleMouseDown : null}
             onMouseMove={isTopCard ? handleMouseMove : null}
             onMouseUp={isTopCard ? handleEndDrag : null}
@@ -162,7 +226,11 @@ export default function Cards() {
             onTouchMove={isTopCard ? handleTouchMove : null}
             onTouchEnd={isTopCard ? handleEndDrag : null}
           >
-            <div className="flex flex-col h-full cursor-grab select-none">
+            <div
+              className={`flex flex-col h-full select-none ${
+                isTopCard && !isAnimating ? "cursor-grab" : "cursor-default"
+              }`}
+            >
               <div className="h-1/2 w-full relative group border-b border-slate-800">
                 <img
                   src={card.image}
@@ -209,7 +277,7 @@ export default function Cards() {
 
                 {isTopCard && (
                   <div className="mt-auto rounded border border-slate-800 bg-slate-950/80 p-1 text-center text-sm text-slate-400">
-                    Swipe left or right
+                    Use the arrows to browse
                   </div>
                 )}
               </div>

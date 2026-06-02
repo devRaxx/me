@@ -9,14 +9,6 @@ export default function Skills() {
         className="flex flex-col items-center justify-center text-center mx-auto"
         id="skills"
       >
-        <div className="flex items-center">
-          <h1 className="font-merriweather text-xl gradient-text animate-pulse animate-infinite animate-ease-out">
-            KITCHEN ESSENTIALS{" "}
-          </h1>
-          <span className="text-white animate-spin animate-infinite ml-4">
-            🔪
-          </span>
-        </div>
         <div>
           <h2 className="text-4xl font-bold mt-4 mb-2 text-slate-50">
             Tech Stack
@@ -74,7 +66,7 @@ export default function Skills() {
             <div
               className="grid grid-cols-2 sm:grid-cols-4 rounded-2xl border border-violet-400/15 bg-slate-950/70 p-5 shadow-[0_24px_80px_rgba(2,6,23,0.45)]"
               data-aos="flip-up"
-              data-aos-delay="500"
+              data-aos-delay="100"
             >
               {tools.map((tool, index) => (
                 <div

@@ -9,15 +9,6 @@ const Work = () => (
     className="h-full flex flex-col items-center justify-center bg-[#020617] text-slate-100"
     id="work"
   >
-    <div className="flex items-center">
-      <h1 className="font-merriweather text-xl gradient-text animate-bounce animate-infinite animate-ease-out">
-        RECIPES FOR GROWTH
-      </h1>
-
-      <p className="animate-bounce animate-infinite animate-ease-out text-4xl">
-        🍲
-      </p>
-    </div>
     <h1 className="text-4xl my-4 font-extrabold text-slate-50">
       Work Experiences
     </h1>
