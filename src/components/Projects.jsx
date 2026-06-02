@@ -2,11 +2,8 @@ import Cards from "../ui/Cards";
 
 export default function Projects() {
   return (
-    <section className="bg-[#020617] text-slate-100">
-      <div
-        className="flex flex-col items-center justify-center text-center mx-auto mt-14"
-        id="projects"
-      >
+    <section className="bg-[#020617] text-slate-100 h-screen">
+      <div className="flex flex-col items-center" id="projects">
         <h2 className="text-4xl my-4 font-extrabold text-slate-50">
           Projects Built
         </h2>

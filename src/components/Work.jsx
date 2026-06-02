@@ -26,7 +26,8 @@ const Work = () => (
             company={exp.company}
             points={exp.points}
             image={exp.image}
-            aos={index % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+            aos={"zoom-in-up"}
+            aos-duration="100"
             link={exp.link}
           />
         ))}
