@@ -6,12 +6,12 @@ import Image3 from "../assets/images/techtix.png";
 import Image4 from "../assets/images/flms.png";
 
 const roleColors = [
-  "bg-red-100 text-red-800",
-  "bg-green-100 text-green-800",
-  "bg-blue-100 text-blue-800",
-  "bg-yellow-100 text-yellow-800",
-  "bg-purple-100 text-purple-800",
-  "bg-pink-100 text-pink-800",
+  "bg-red-950/60 text-red-200 border border-red-400/20",
+  "bg-emerald-950/60 text-emerald-200 border border-emerald-400/20",
+  "bg-blue-950/60 text-blue-200 border border-blue-400/20",
+  "bg-amber-950/60 text-amber-200 border border-amber-400/20",
+  "bg-violet-950/60 text-violet-200 border border-violet-400/20",
+  "bg-pink-950/60 text-pink-200 border border-pink-400/20",
 ];
 
 const getRandomRoleColor = () =>
@@ -73,7 +73,7 @@ export default function Cards() {
     projectData.map((card) => ({
       ...card,
       roleColor: getRandomRoleColor(),
-    }))
+    })),
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -121,7 +121,7 @@ export default function Cards() {
 
   const visibleCards = Array.from(
     { length: 5 },
-    (_, i) => cards[(currentIndex + i) % cards.length]
+    (_, i) => cards[(currentIndex + i) % cards.length],
   );
 
   return (
@@ -144,16 +144,16 @@ export default function Cards() {
           }deg)`;
         }
 
-        let bgColor = "bg-white";
-        if (isTopCard && direction === "right") bgColor = "bg-green-50";
-        else if (isTopCard && direction === "left") bgColor = "bg-red-50";
+        let bgColor = "bg-slate-950/90";
+        if (isTopCard && direction === "right") bgColor = "bg-emerald-950/90";
+        else if (isTopCard && direction === "left") bgColor = "bg-rose-950/90";
 
         return (
           <div
             key={`${currentIndex}-${i}`}
             ref={isTopCard ? cardRef : null}
             style={cardStyle}
-            className={`absolute inset-0 ${bgColor} rounded-lg shadow-lg overflow-hidden transition-all duration-200 ease-out border border-gray-400`}
+            className={`absolute inset-0 ${bgColor} rounded-lg overflow-hidden border border-slate-800 shadow-[0_24px_80px_rgba(2,6,23,0.65)] transition-all duration-200 ease-out`}
             onMouseDown={isTopCard ? handleMouseDown : null}
             onMouseMove={isTopCard ? handleMouseMove : null}
             onMouseUp={isTopCard ? handleEndDrag : null}
@@ -163,7 +163,7 @@ export default function Cards() {
             onTouchEnd={isTopCard ? handleEndDrag : null}
           >
             <div className="flex flex-col h-full cursor-grab select-none">
-              <div className="h-1/2 w-full relative group border-b border-gray-200">
+              <div className="h-1/2 w-full relative group border-b border-slate-800">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -175,16 +175,16 @@ export default function Cards() {
                   rel="noopener noreferrer"
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
                 >
-                  <button className="bg-white text-gray-800 font-bold px-4 py-2 rounded-lg shadow hover:bg-amber-300 transition duration-300 flex items-center gap-2">
+                  <button className="flex items-center gap-2 rounded-lg border border-cyan-400/20 bg-slate-950/90 px-4 py-2 font-bold text-slate-100 shadow-lg transition duration-300 hover:bg-cyan-950/80">
                     Visit <FaLink />
                   </button>
                 </a>
               </div>
 
-              <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-grow">
-                <div className="border-b border-gray-200 pb-2 mb-3">
+              <div className="p-6 bg-gradient-to-b from-slate-950 to-slate-900 flex flex-col flex-grow">
+                <div className="border-b border-slate-800 pb-2 mb-3">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h2 className="text-xl font-bold text-gray-800">
+                    <h2 className="text-xl font-bold text-slate-50">
                       {card.title}
                     </h2>
                     <span
@@ -195,10 +195,12 @@ export default function Cards() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 mb-2 text-lg">{card.description}</p>
+                <p className="mb-2 text-lg text-slate-300">
+                  {card.description}
+                </p>
 
                 {card.contributions?.length > 0 && (
-                  <ul className="list-disc list-inside text-base text-gray-700 mb-4 space-y-1">
+                  <ul className="list-disc list-inside mb-4 space-y-1 text-base text-slate-400">
                     {card.contributions.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
@@ -206,7 +208,7 @@ export default function Cards() {
                 )}
 
                 {isTopCard && (
-                  <div className="mt-auto text-sm text-gray-400 text-center p-1 bg-gray-50 rounded border border-gray-200">
+                  <div className="mt-auto rounded border border-slate-800 bg-slate-950/80 p-1 text-center text-sm text-slate-400">
                     Swipe left or right
                   </div>
                 )}

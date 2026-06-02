@@ -5,7 +5,7 @@ import Skills from "./components/Skills";
 import Socials from "./components/Socials";
 function App() {
   return (
-    <div className="font-montserrat">
+    <div className="min-h-screen bg-[#020617] font-montserrat text-slate-100">
       <Hero />
       <Projects />
       <Work />
