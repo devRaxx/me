@@ -32,7 +32,7 @@ const ExperienceItem = ({ date, title, company, points, image, aos, link }) => (
               rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center opacity-0 transition-[opacity] duration-0 group-hover:opacity-100 group-hover:duration-500"
             >
-              <button className="bg-white text-gray-800 font-bold px-4 py-2 rounded-lg shadow hover:bg-amber-300 hover:scale-125 transition duration-300 flex items-center gap-2">
+              <button className="flex items-center gap-2 rounded-lg border border-cyan-400/20 bg-slate-950/90 px-4 py-2 font-bold text-slate-100 shadow-lg transition duration-300 hover:scale-125 hover:bg-cyan-950/80">
                 View
               </button>
             </a>

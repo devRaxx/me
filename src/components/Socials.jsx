@@ -1,6 +1,6 @@
 export default function Socials() {
   return (
-    <section id="socials" className="py-16 bg-[#0f172a] text-white">
+    <section id="socials" className="bg-[#020617] py-16 text-slate-100">
       <div className="max-w-2xl mx-auto flex flex-col items-center text-center px-4">
         <div className="flex items-center">
           <h1 className="font-merriweather text-xl gradient-text animate-pulse animate-infinite animate-ease-out">
@@ -9,7 +9,7 @@ export default function Socials() {
           <span className="text-white ml-4">📧</span>
         </div>
 
-        <p className="text-gray-300 mb-10 max-w-md">
+        <p className="mb-10 max-w-md text-slate-300">
           Got an idea simmering? A collaboration in the oven? Let’s whip up
           something amazing together — reach out anytime!
         </p>
@@ -48,14 +48,14 @@ export default function Socials() {
 function ContactItem({ label, value, href }) {
   return (
     <div>
-      <h2 className="text-sm uppercase text-gray-400 font-semibold tracking-wider mb-1">
+      <h2 className="mb-1 text-sm font-semibold uppercase tracking-wider text-slate-400">
         {label}
       </h2>
       <a
         href={href || "/"}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-lg text-blue-400 hover:underline break-all"
+        className="break-all text-lg text-cyan-300 hover:underline"
       >
         {value}
       </a>
